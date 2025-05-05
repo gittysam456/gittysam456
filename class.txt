@@ -1,0 +1,37 @@
+*def __init__ == constructor(run automatic)
+object:real world entity of the class
+class:blueprint of the class or the map
+class have two elements:
+ - variable oor attributes(data,attribute,properties)
+   *instance- value the variable change every time,different for each object
+      (we can define the variable outside the class)
+   *static- value of variable is constant , it is shared by all the objects.
+   *local- value of the variable is store in a  particular method
+ -methods
+   *instance
+   *static
+   *local
+
+example
+   class Demo:
+     def __init__(self,x,y)
+       self.x=x
+       self.y=y
+    def test(self,p)
+        self.P=P
+        print(self.x)
+        print(self.y)
+
+    d1=Demo(5,6)
+    d1.w=60
+    d2=Demo(12,5)
+    d2.test(45)
+constructor gets executed per object.
+we can not access  a object by the class name it is only applicable for the instance method .but static method and class method can be called using the class name
+##methods####
+we can not  access the object from the class level in the methods of the static and
+
+#create a class name ATM divides a mmenu drive
+basic basic banking operations such as setpin , check balance , deposit  and withdraw
+
+
