@@ -1,0 +1,10 @@
+const rectangle={
+    length:45,
+    width:20,
+    calculateArea:function(){
+        return this.length*this.width;
+    },
+    calculatePerimeter:function(){
+        return 2*(this.length+this.width);
+    }
+}
