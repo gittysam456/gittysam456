@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function preferredBrowser(){
+            prefer=document.f1.browsers.value;
+            alert("You have selected a preferred browser"+prefer);
+        }
+    </script>
+</head>
+<body>
+  <form name="f1">
+    <label for="browsers">Choose a preferred browser:</label>
+    <select name="browsers" id="browsers" onchange="preferredBrowser()">
+        <option value="Chrome">Chrome</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Safari">Safari</option>
+        <option value="Edge">Edge</option>
+    </select>  
+</body>
+</html>
