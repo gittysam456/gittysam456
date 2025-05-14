@@ -32,6 +32,3 @@ class Vehicle:
             self.premium_amount=self.vehicle_cost * 0.06
         else:
             print("the premium amount cannot be calculated")
-        
-           
-    
