@@ -1,126 +1,23 @@
 """
-A university
-wants
-to
-automate
-their
-admission
-process.Students
-are
-admitted
-based
-on
-marks
-scored in a
-qualifying
-exam.
-A
-student is identified
-by
-student
-id, age and marks in qualifying
-exam.Data
-are
-valid,
-if:
+A university wants to automate their admission process. Students are admitted based on the marks scored in a qualifying exam. A student is identified by their student ID, age, and marks in the qualifying exam. The data is considered valid if the student's age is greater than 20 and the marks are between 0 and 100 (both inclusive). A student qualifies for admission if the data is valid and the marks are 65 or more.
 
-Age is greater
-than
-20
-Marks is between
-0 and 100(both
-inclusive)
-A
-student
-qualifies
-for admission, if
+You are required to write a Python program to represent students seeking admission to the university. The details of the student are encapsulated in a class as described below:
 
-Age and marks
-are
-valid and
-Marks is 65 or more
-Write
-a
-python
-program
-to
-represent
-the
-students
-seeking
-admission in the
-university.
+**Class Name**: `Student`
+**Attributes (Private)**:
 
-The
-details
-of
-student
+* `student_id`
+* `marks`
+* `age`
 
+**Methods (Public)**:
 
-class are given below.
-
-
-Class
-name: Student
-
-Attributes
-(private)
-
-student_id
-marks
-age
-
-Methods
-(public)
-
-__init__()
-
-Create and initialize
-all
-instance
-variables
-to
-None
-
-validate_marks()
-
-If
-data is valid,
-return true.Else,
-return false
-
-validate_age()
-
-check_qualification()
-
-Validate
-marks and age.
-
-If
-valid, check if marks is 65 or more.
-If
-so
-return true
-Else
-return false
-Else
-return false
-
-setter
-methods
-
-Include
-setter
-methods
-for all instance variables to set its values
-
-getter
-methods
-
-Include
-getter
-methods
-for all instance variables to get its values
+* `__init__()` – Initializes all instance variables to `None`.
+* `validate_marks()` – Returns `True` if marks are between 0 and 100, otherwise returns `False`.
+* `validate_age()` – Returns `True` if age is greater than 20, otherwise returns `False`.
+* `check_qualification()` – Validates age and marks. If both are valid and marks are 65 or more, returns `True`. Otherwise, returns `False`.
+* Setter methods – Set the values of `student_id`, `marks`, and `age`.
+* Getter methods – Get the values of `student_id`, `marks`, and `age`.
 """
 class Student:
     def __init__(self):
