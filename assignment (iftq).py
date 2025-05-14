@@ -1,45 +1,126 @@
 """
+A university
+wants
+to
+automate
+their
+admission
+process.Students
+are
+admitted
+based
+on
+marks
+scored in a
+qualifying
+exam.
+A
+student is identified
+by
+student
+id, age and marks in qualifying
+exam.Data
+are
+valid,
+if:
+
+Age is greater
+than
+20
+Marks is between
+0 and 100(both
+inclusive)
+A
+student
+qualifies
+for admission, if
+
+Age and marks
+are
+valid and
+Marks is 65 or more
+Write
+a
+python
+program
+to
+represent
+the
+students
+seeking
+admission in the
+university.
+
+The
+details
+of
+student
 
 
----
+class are given below.
 
-A university wants to automate their admission process. Students are admitted based on marks scored in a qualifying exam. A student is identified by their student ID, age, and marks in the qualifying exam. Data are considered valid if the age is greater than 20 and the marks are between 0 and 100 (both inclusive). A student qualifies for admission if both the age and marks are valid, and the marks are 65 or more.
 
-You are required to write a Python program to represent the students seeking admission in the university. The details of the student class are given below:
+Class
+name: Student
 
-**Class Name**: `Student`
-**Attributes (Private)**:
+Attributes
+(private)
 
-* `student_id`
-* `marks`
-* `age`
+student_id
+marks
+age
 
-**Methods (Public)**:
+Methods
+(public)
 
-* `__init__()` – Create and initialize all instance variables to `None`.
-* `validate_marks()` – If data is valid (i.e., marks are between 0 and 100), return `True`; else, return `False`.
-* `validate_age()` – If age is greater than 20, return `True`; else, return `False`.
-* `check_qualification()` – First validate marks and age. If both are valid and marks are 65 or more, return `True`; otherwise, return `False`.
-* Setter methods – Include setter methods for all instance variables to set their values.
-* Getter methods – Include getter methods for all instance variables to get their values.
+__init__()
 
----
+Create and initialize
+all
+instance
+variables
+to
+None
 
-### Problem Statement:
- a student who is eligible for admission must choose a course and pay the fees for it. If the student has scored more than 85 marks in the qualifying exam, they get a 25% discount on the course fees.
+validate_marks()
 
-The valid course IDs and corresponding fees are:
+If
+data is valid,
+return true.Else,
+return false
 
-| Course ID | Fees    |
-| --------- | ------- |
-| 1001      | 25575.0 |
-| 1002      | 15500.0 |
+validate_age()
 
-You are required to extend the program written in the previous assignment to include the above requirement.
+check_qualification()
 
-The instance variables and methods to be included in the `Student` class for this extension are specified but not detailed in the original text. You will likely need to add attributes for `course_id` and `fees`, methods to validate the course, and a method to calculate discounted fees based on the marks.
+Validate
+marks and age.
 
----
+If
+valid, check if marks is 65 or more.
+If
+so
+return true
+Else
+return false
+Else
+return false
+
+setter
+methods
+
+Include
+setter
+methods
+for all instance variables to set its values
+
+getter
+methods
+
+Include
+getter
+methods
+for all instance variables to get its values
 """
 class Student:
     def __init__(self):
@@ -84,18 +165,3 @@ class Student:
                 return False
         else:
             return False
-    def set_course_id(self,course_id):
-        self.__course_id=course_id
-    def get_course_id(self):
-        return self.__course_id
-    def set_fees(self,fees):
-        self.__fees=fees
-    def get_fees(self):
-        return self.__fees
-    def calculate_fees(self):
-        if self.__marks > 85:
-            return self.__fees * 0.75
-        else:
-            return self.__fees
-
-    def
