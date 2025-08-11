@@ -1,0 +1,59 @@
+#array creation method in the numpy
+1. array()
+2. arange():
+   - Syntax: np.arange(start, stop, step, dtype=None)
+   - start: starting value of the sequence (inclusive)
+   - stop: end value of the sequence (exclusive)
+   - step: spacing between values (default is 1)
+   - dtype: data type of the output array (optional)
+   Example: np.arange(0, 10, 2) creates an array with values [0, 2, 4, 6, 8].
+   - Note: If only one argument is provided, it is treated as the stop value,
+     and the start value defaults to 0 with a step of 1.
+   Example: np.arange(5) creates an array with values [0, 1, 2, 3, 4].
+   - If two arguments are provided, they are treated as start and stop values,
+     with a step of 1.
+   Example: np.arange(2, 5) creates an array with values [2, 3, 4].
+   - If three arguments are provided, they are treated as start, stop, and step values.
+   Example: np.arange(1, 10, 2) creates an array with values [1, 3, 5, 7, 9].
+   - If the step is negative, it creates a decreasing sequence.
+   Example: np.arange(10, 0, -2) creates an array with values [10, 8, 6, 4, 2].
+   - If the step is zero, it raises a ValueError.
+   Example: np.arange(0, 10, 0) raises a ValueError.
+   - If the start value is greater than or equal to the stop value,
+     it creates an empty array.
+3. linspace()
+4. zeros()
+5.ones()
+6.full()
+7.eye(): create an 2d array with the 1 in the prinicpal diagoal ans 0 elsewhere
+Syntax:np.eye(N, M=None, k=0, dtype=<class 'float'>, order='C')
+   - N: number of rows
+   - M: number of columns (optional, defaults to N)
+   - k: index of the diagonal (default is 0, which is the main diagonal)
+   - dtype: data type of the array (default is float)
+   - order: memory layout order ('C' for row-major, 'F' for column-major)
+   Example: np.eye(3) creates a 3x3 identity matrix.
+8.identity(): it gives only square matrix
+   - Syntax: np.identity(n, dtype=None)
+   - n: size of the square matrix (number of rows and columns)
+   - dtype: data type of the output array (optional, default is float)
+   Example: np.identity(3) creates a 3x3 identity matrix.
+   - Note: The identity matrix has 1s on the main diagonal and 0s elsewhere.
+   - It is a special case of the eye() function where the number of rows and
+     columns are equal.
+   - The identity matrix is often used in linear algebra and matrix operations.
+9.diag(): it will extract the diagonal elements of a matrix or create a diagonal matrix
+   - Syntax: np.diag(v, k=0)
+   - v: input array (1D or 2D)
+   - k: index of the diagonal (default is 0, which is the main diagonal)
+   Example: np.diag([1, 2, 3]) creates a diagonal matrix with [1, 2, 3] on the main diagonal.
+   - If v is a 1D array, it creates a diagonal matrix with the elements of v on the specified diagonal.
+   - If v is a 2D array, it extracts the elements from the specified diagonal.
+   - If k > 0, it extracts elements above the main diagonal; if k < 0, it extracts elements below the main diagonal.
+10.empty()
+11. numpy.random library
+   1.randint()
+   2.rand()
+   3.uniform()
+   4.randn()
+   5.normal()
