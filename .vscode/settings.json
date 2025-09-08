@@ -1,5 +1,8 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:system",
     "python-envs.pythonProjects": [],
-    "python.pythonPath": "C:\\Users\\sadaf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+    "python.pythonPath": "C:\\Users\\sadaf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "cSpell.words": [
+        "interquartile"
+    ]
 }
