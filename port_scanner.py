@@ -1,8 +1,4 @@
 import socket
-
-from fontTools.misc.cython import returns
-
-
 def port_scanner(target, start_port, end_port): #a function that sccans the port
     print(f'Scanning {target} from {start_port}, to {end_port}.....') # eg: print the input ports for the scannning
     for port in range(start_port,end_port+1):  #a loop  that will scan the ports in the range

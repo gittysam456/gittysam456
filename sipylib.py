@@ -44,3 +44,6 @@ for col in ["mpg", "horsepower", "weight"]:
     plt.title(f'Histogram of {col} with Mean and Std Dev')
     plt.legend()
     plt.show()
+    
+    #assumption of the Empirical rule - 68-95-99.7%
+    
