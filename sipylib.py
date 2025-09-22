@@ -29,12 +29,13 @@ col="mpg"
 data=mtcars[col]
 mean , std= data.mean(), data.std()
 print(f"mean : {mean}, std : {std}")
-#plot histogram with std 
-#sns.plot(data,  kde="True")
+plot histogram with std 
+sns.plot(data,  kde="True")
     
 for col in ["mpg", "horsepower", "weight"]:
     data=mtcars[col]
     mean , std= data.mean(), data.std()
+
     print(f"mean : {mean}, std : {std}")
     plt.figure(figsize=(10,5))
     sns.histplot(data, kde=True)
@@ -42,8 +43,12 @@ for col in ["mpg", "horsepower", "weight"]:
     plt.axvline(mean + std, color='g', linestyle='--', label='Mean + 1 Std Dev')
     plt.axvline(mean - std, color='g', linestyle='--', label='Mean - 1 Std Dev')
     plt.title(f'Histogram of {col} with Mean and Std Dev')
-    plt.legend()
-    plt.show()
-    
-    #assumption of the Empirical rule - 68-95-99.7%
-    
+    #plt.legend()
+    #plt.show()
+    Empirical rule - 68-95-99.7%
+    for col in ['horsepower','weight','mpg']:
+        print(f"{col}Kurtosis: {kurtosis(mtcars[col]):.2f}")
+        sns.histplot(mtcars[col], kde=True)
+        plt.title(f"Histogram of {col} ")
+        plt.show()
+        
