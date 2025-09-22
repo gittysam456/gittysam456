@@ -4,6 +4,7 @@ from scipy.stats import skew, kurtosis, shapiro, normaltest, jarque_bera
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.pyplot as plt
+from scipy.stats import boxcox, yeojohnson
 """measure of the central tendencies
     - mean : average
     - median : middle value 
@@ -28,10 +29,11 @@ mtcars.describe()
 col="mpg"
 data=mtcars[col]
 mean , std= data.mean(), data.std()
-print(f"mean : {mean}, std : {std}")
+""""""
+#print(f"mean : {mean}, std : {std}")
 plot histogram with std 
 sns.plot(data,  kde="True")
-    
+"""   
 for col in ["mpg", "horsepower", "weight"]:
     data=mtcars[col]
     mean , std= data.mean(), data.std()
@@ -49,6 +51,63 @@ for col in ["mpg", "horsepower", "weight"]:
     for col in ['horsepower','weight','mpg']:
         print(f"{col}Kurtosis: {kurtosis(mtcars[col]):.2f}")
         sns.histplot(mtcars[col], kde=True)
-        plt.title(f"Histogram of {col} ")
-        plt.show()
-        
+       # plt.title(f"Histogram of {col} ")
+       # plt.show()
+col = "mpg"
+data= mtcars[col]
+
+
+# Shapiro - Wilk Test
+stat, p =shapiro(data)
+print(f"Shapiro-Wilk Test: p={p :.4f} -> {'Normal' if p>0.05 else 'Not Normal'}")
+
+#D'Agostino's K^2 Test
+stat, p = normaltest(data)
+print(f"D'Agostino's K^2 Test: p={p :.4f} -> {'Normal' if p>0.05 else 'Not Normal'}")
+
+#Jarque-Bera Test
+stat, p = jarque_bera(data)
+print(f"Jarque-Bera Test: p={p :.4f} -> {'Normal' if p>0.05 else 'Not Normal'}")
+
+    square root transformation:
+    
+    cube root transformation :
+    y=cuberoot(y)
+    intution 
+     works on the positive and negative values
+    BOX-cox transformation:
+    formaula 
+    general family of power transformation
+    chooses an optimal lambda that minimizes skewness
+
+limitation :
+1. requires x>0
+2. sensitive to outliers
+3. sometime hard to interpret the values
+
+Yeo - John transformation :
+     -extension of box cox
+     -can handle zero and negative values
+"""
+col="acceleration"
+data=mtcars[col]
+    #different transformations
+transformations={
+        "original":data,
+        "log":np.log(data),
+        "square root":np.sqrt(data),
+        "cube-root": np.chart(data),
+        "Box-Cox":None,
+        "Yeo-Johnson":None
+    }
+    #box-cox(only if data>0)
+    
+    if (data>0).all():
+        transformations["Box-Cox"],_=boxcox(data)
+    #yejohnoson 
+    tranformations["Yeo-Johnson"],_=yeojohnson(data)
+    #shapiro afteer the treansformation 
+    for name, tdata in transformations.items():
+        if data is not None:
+            stat, p = shapiro(tdata)
+            print(f"{name:<12}->shapiro p={p:.4f} -> {'Normal' if p>0.05 else 'Not Normal'}")
