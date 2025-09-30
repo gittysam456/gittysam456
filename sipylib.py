@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import boxcox, yeojohnson
+import scipy.stats as stats
+import statsmodels.api as sm
 """measure of the central tendencies
     - mean : average
     - median : middle value 
@@ -29,11 +31,11 @@ mtcars.describe()
 col="mpg"
 data=mtcars[col]
 mean , std= data.mean(), data.std()
-""""""
+"""
 #print(f"mean : {mean}, std : {std}")
 plot histogram with std 
 sns.plot(data,  kde="True")
-"""   
+
 for col in ["mpg", "horsepower", "weight"]:
     data=mtcars[col]
     mean , std= data.mean(), data.std()
@@ -88,7 +90,7 @@ limitation :
 Yeo - John transformation :
      -extension of box cox
      -can handle zero and negative values
-"""
+
 col="acceleration"
 data=mtcars[col]
     #different transformations
@@ -110,4 +112,31 @@ transformations={
     for name, tdata in transformations.items():
         if data is not None:
             stat, p = shapiro(tdata)
-            print(f"{name:<12}->shapiro p={p:.4f} -> {'Normal' if p>0.05 else 'Not Normal'}")
+
+            """
+data = mtcars["weight"]
+#plot messy raw dsitribution
+sns.histplot(data, kde=True,color ="salmon")
+plt.title("Raw Distribution")
+#plt.show()
+#QPPLY CLT :SAMPLING DSTRIBUTION MEAN 
+np.random.seed(42)
+sample_means=[np.mean(np.random.choice(data,size=5,replace=True)) for _ in range(1000)]
+sns.histplot(sample_means, kde=True,color="green")
+plt.title("Sampling Distribution of the Mean (CLT applied)")
+#print(plt.show()) 
+col="acceleration"
+data=mtcars[col]
+#QQ plot
+
+sm.qqplot(data, line ='s')
+plt.title(f"Q-Q plot of {col}")
+plt.show()
+#apply clt :sampling distribution of mean
+np.random.seed(42)
+sample_means=[np.mean(np.random.choice(data,size=30,replace=True)) for _ in range(1000)]
+sample_means=np.array(sample_means)
+sm.qqplot(sample_means, line='s')
+plt.title(f"Q-Q plot of Sampling Distribution of the Mean (CLT applied) for {col}")
+plt.show()
+
