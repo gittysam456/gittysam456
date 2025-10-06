@@ -11,3 +11,4 @@ print("Duplicate Rows:",df.duplicated().sum())
 #Drop the dupLICATES
 df=df.drop_duplicates()
 print(df['sex'].unique())  #check categories
+df.describe(include=['category','object','bool'])
